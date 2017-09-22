@@ -1,9 +1,15 @@
 var $mainImages = $(".main-page-images");
-var $doc = $('<div id="overlay"><input type="button" class="navButtons" id="toLeft" value="<"><input type="button" class="navButtons" id="toRight" value=">"/><input type="button" class="navButtons" id="toExit" value="X"/></div>');
+var $doc = $('<div id="overlay"></div>');
+var $navButtons = $('<input type="button" class="navButtons" id="toLeft" value="<"><input type="button" class="navButtons" id="toRight" value=">"/><input type="button" class="navButtons" id="toExit" value="X"/>');
 var $secondMainPage = $("#second-main-page");
+var old_html = $mainImages.html();
 
 
-$(".images").on("click",function(){
+
+$(".images").on("click", imagesMove);
+
+function imagesMove(){
+	$doc.append($navButtons);
 	$doc.append($(this));
 	$mainImages.append($doc);
 	$mainImages.delay(400).animate({"margin-right":'+=600'},1000,"linear");
@@ -11,17 +17,23 @@ $(".images").on("click",function(){
 		$secondMainPage.animate({"margin-left":'+=760'},500,"linear", function(){
 		$secondMainPage.css("visibility",'visible');
 	});
-});
+};
+	
+$mainImages.on("click", '#toExit', exitButton);
 
-	$mainImages.on("click", '#toExit', function(){
+function exitButton(){
 		$mainImages.delay(400).animate({"margin-right":'-=600'},1000,"linear");
-		$secondMainPage.css("z-index",'-1').delay(700).animate({"margin-right":'-=760'},500,"linear", function(){
-		$secondMainPage.delay(400).css("visibility","hidden");
+		$secondMainPage.css("z-index",'-1').delay(1000).animate({"margin-left":'-=1'},1000,"linear", function(){
+		$secondMainPage.animate({"margin-left":'-=760'},1000,"linear").css("visibility","hidden");
 	});
-		$mainImages.unbind();
-		$doc.hide();
-	});
-
+	catchAll();
+	};
+	
+function catchAll(){
+		$doc.empty();
+		$mainImages.html(old_html);
+		$(".images").on("click", imagesMove);
+};
 
 
 $mainImages.on("click", '#toLeft', function(){
