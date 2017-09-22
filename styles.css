@@ -152,3 +152,35 @@ body{
 	max-width: 500px;
 	max-height: 500px;
 }
+
+#second-main-page{
+	position:relative;
+	width:44%;
+	visibility:hidden;
+}
+
+#navForImages{
+	position:absolute;
+}
+
+.navimages{
+	border-radius: 50%;
+	width:50px;
+	height:50px;
+	padding:10px;
+}
+
+.navButtons{
+	height:40px;
+	width:40px;
+	position:absolute;
+	top:0;
+	right:0;
+	margin:1.5em;
+}
+#toRight{
+	margin-top:4.5em;
+}
+#toExit{
+	margin-top:7.5em;
+}
