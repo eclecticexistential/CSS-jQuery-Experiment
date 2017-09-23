@@ -84,11 +84,12 @@ body{
 
 .main-page-images{
 	display: inline-block;
+	background:#000;
 	position: relative;
 	width: 56%;
-	border: 1px solid #ddd;
 	float: right;
 	overflow: hidden;
+	border-left:1px solid black;
 }
 
 .next,
@@ -156,7 +157,8 @@ body{
 #second-main-page{
 	position:relative;
 	width:44%;
-	visibility:hidden;
+	margin-left:760px;
+	z-index:-1;
 }
 
 #navForImages{
