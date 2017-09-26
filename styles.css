@@ -167,8 +167,8 @@ body{
 
 .navimages{
 	border-radius: 50%;
-	width:75px;
-	height:75px;
+	width:55px;
+	height:55px;
 	padding:10px;
 }
 
@@ -188,7 +188,7 @@ body{
 }
 
 .here{
-	visibility:hidden;
+	display:none;
 }
 
 .selected{
