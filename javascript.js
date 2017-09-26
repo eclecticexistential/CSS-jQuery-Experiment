@@ -11,7 +11,6 @@ var $array=[];
 var $navImages = $(".navimages");
 var $actArrImg = [];
 var $allOf = $(".here>div");
-var indexOf;
 var $arrayImages=$('<img class="navimages" id="0" src="EmiliaClarke.png" alt="Emilia Clarke"><img class="navimages" id="1" src="AllisonRandal.png" alt="Allison Randal"><img class="navimages" id="2" src="DanaiGurira.png" alt="Danai Gurira"><img class="navimages" id="3" src="RosarioDawson.png" alt="Rosario Dawson"><img class="navimages" id="4" src="LeftEye.png" alt="Left Eye - TLC"><img class="navimages" id="5" src="AnnMargaret.png" alt="Ann Margaret"><img class="navimages" id="6" src="GraceHopper.png" alt="Grace Hopper"><img class="navimages" id="7" src="YoaniSanchez.png" alt="Yoani Sanchez">');
 
 
@@ -149,11 +148,9 @@ function updateTextByBtn(m){
 function changeMain(m){
 	var x = parseInt($($actArrImg).not(":visible").attr("id"));
 	$($actArrImg[x]).show();
-	console.log(x);
 	var y = x+m;
 	if(y>$actArrImg.length-1){y=0;}
 	if(y<0){y=$actArrImg.length-1;}
-	console.log(y)
 	$($actArrImg[y]).hide();
 }
 
