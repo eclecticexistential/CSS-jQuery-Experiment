@@ -146,14 +146,17 @@ function updateTextByBtn(m){
 //alters mini icon array to move images//
 
 function changeMain(m){
-	var x = parseInt($($actArrImg).not(":visible").attr("id"));
-	$($actArrImg[x]).show();
-	var y = x+m;
-	if(y>$actArrImg.length-1){y=0;}
-	if(y<0){y=$actArrImg.length-1;}
-	$($actArrImg[y]).hide();
+	$($actArrImg).not(":visible").show();
+		for(i=0;i<$allOf.length;i++){
+			if($($allOf[i]).hasClass("selected")){
+				$($actArrImg[i]).show();
+				var $newPos = i+m;
+					if($newPos>$actArrImg.length-1){$newPos=0;}
+					if($newPos<0){$newPos=$actArrImg.length-1;}
+						$($actArrImg[$newPos]).hide();
+			}
+		}
 }
-
 
 
 //overlay buttons to move images on both sides //
